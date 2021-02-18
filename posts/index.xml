@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on Anqing&#39;s Blog</title>
-    <link>/posts/</link>
+    <link>anqing-none.github.io/posts/</link>
     <description>Recent content in Posts on Anqing&#39;s Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Thu, 18 Feb 2021 15:06:00 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Thu, 18 Feb 2021 15:06:00 +0800</lastBuildDate><atom:link href="anqing-none.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>FirstPost</title>
-      <link>/2021/02/firstpost/</link>
+      <link>anqing-none.github.io/2021/02/firstpost/</link>
       <pubDate>Thu, 18 Feb 2021 15:06:00 +0800</pubDate>
       
-      <guid>/2021/02/firstpost/</guid>
+      <guid>anqing-none.github.io/2021/02/firstpost/</guid>
       <description>在上高中的时候，上斐讯的车搞到一台斐讯路由器（K2），型号可见下图。
 1.刷入breed web控制台 大学的时候想用校园网连接路由器开启WiFi寝室共享，奈何当时计算机基础知识不够，还不会组网（简单的设置路由器），路由器一直放角落吃灰了两年，大三的时候看b站许迎果up主的教程，刷入了BREED WEB控制台，跟着教程走的，具体步骤现在已经忘记了。
 1.1进入Breed Web控制台 进入方式很简单：
