@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Anqing&#39;s Blog</title>
+    <link>/</link>
+    <description>Recent content on Anqing&#39;s Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-CN</language>
+    <lastBuildDate>Thu, 18 Feb 2021 15:06:00 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>FirstPost</title>
+      <link>/posts/firstpost/</link>
+      <pubDate>Thu, 18 Feb 2021 15:06:00 +0800</pubDate>
+      
+      <guid>/posts/firstpost/</guid>
+      <description>在上高中的时候，上斐讯的车搞到一台斐讯路由器（K2），型号可见下图。
+1.刷入breed web控制台 大学的时候想用校园网连接路由器开启WiFi寝室共享，奈何当时计算机基础知识不够，还不会组网（简单的设置路由器），路由器一直放角落吃灰了两年，大三的时候看b站许迎果up主的教程，刷入了BREED WEB控制台，跟着教程走的，具体步骤现在已经忘记了。
+1.1进入Breed Web控制台 进入方式很简单：
+  先拔掉路由器电源插头
+  按住路由器按钮
+  插入电源插头，此时按钮不能松，须按住10s。
+  在浏览器输入192.168.1.1进入Breed Web控制台。
+  2.选择固件 2.1 确定路由器配置 在寻找固件时我一直以为我的路由器是k2p，导致我在刷入固件时总是提示我固件大小不能超过7.1M，后来仔细看路由器背面才发现我的是K2，型号为PSG1218，这个型号很重要（在路由器背面），后面寻找路由器固件需要匹配型号，否则刷上去了电脑也无法识别路由器网络，当然，刷错也没啥关系，按照进入Breed Web控制台的方式重新再刷就是（我就刷错过很多次。。。。）。
+我选择了Hiboy 老毛子固件，因为需要SSR功能，之前在学校时安装过OpenWrt，OpenWrt自由度高，许多路由固件都是基于OpenWrt二次开发；但是奈何我太菜，需要花费太多时间去配置，而我又没有那么高级的需求。
+2.2 刷入固件 输入固件是就按默认操作，内存布局我也没动，就选择公版。
+2.3 配置ssr 浏览器输入192.168.123.1，默认账号密码admin进入路由器管理界面后看图操作就好。老毛子固件很人性化，支持ssr订阅链接，更新到节点后还可以测试节点是否连接，省去我在电脑端用浏览器尝试。
+3 遇到的问题 路由器型号最最最重要，好几次下错了型号的固件，虽然安装上了，但又开不了5g Hz的WiFi，浪费了至少一半的时间！！
+ 路由器无法开启5GHz WiFi  确认固件是否正确，我就是因为下错了才出现的。
+  </description>
+    </item>
+    
+  </channel>
+</rss>
