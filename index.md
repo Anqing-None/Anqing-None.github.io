@@ -4,15 +4,15 @@ layout: home
 
 hero:
   name: "Anqing's blog"
-  text: "Anqing's blog website."
-  tagline: My great project tagline
-  actions:
-    - theme: brand
-      text: Markdown Examples
-      link: /markdown-examples
-    - theme: alt
-      text: API Examples
-      link: /api-examples
+  # text: "Anqing's blog website."
+  # tagline: My great project tagline
+  # actions:
+  #   - theme: brand
+  #     text: 所有文章
+  #     link: /markdown-examples
+  #   - theme: alt
+  #     text: API Examples
+  #     link: /api-examples
 
 features:
   - title: Feature A
