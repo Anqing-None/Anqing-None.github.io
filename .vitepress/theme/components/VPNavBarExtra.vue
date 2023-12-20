@@ -1,26 +1,33 @@
 <script lang="ts" setup>
-import { computed } from 'vue'
-import VPFlyout from './VPFlyout.vue'
-import VPMenuLink from './VPMenuLink.vue'
-import VPSwitchAppearance from './VPSwitchAppearance.vue'
-import VPSocialLinks from './VPSocialLinks.vue'
-import { useData } from '../composables/data'
-import { useLangs } from '../composables/langs'
+import { computed } from "vue";
+import VPFlyout from "./VPFlyout.vue";
+import VPMenuLink from "./VPMenuLink.vue";
+import VPSwitchAppearance from "./VPSwitchAppearance.vue";
+import VPSocialLinks from "./VPSocialLinks.vue";
+import { useData } from "../composables/data";
+import { useLangs } from "../composables/langs";
 
-const { site, theme } = useData()
-const { localeLinks, currentLang } = useLangs({ correspondingLink: true })
+const { site, theme } = useData();
+const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
 
 const hasExtraContent = computed(
   () =>
     (localeLinks.value.length && currentLang.value.label) ||
     site.value.appearance ||
     theme.value.socialLinks
-)
+);
 </script>
 
 <template>
-  <VPFlyout v-if="hasExtraContent" class="VPNavBarExtra" label="extra navigation">
-    <div v-if="localeLinks.length && currentLang.label" class="group translations">
+  <VPFlyout
+    v-if="hasExtraContent"
+    class="VPNavBarExtra"
+    label="extra navigation"
+  >
+    <div
+      v-if="localeLinks.length && currentLang.label"
+      class="group translations"
+    >
       <p class="trans-title">{{ currentLang.label }}</p>
 
       <template v-for="locale in localeLinks" :key="locale.link">
@@ -28,10 +35,13 @@ const hasExtraContent = computed(
       </template>
     </div>
 
-    <div v-if="site.appearance && site.appearance !== 'force-dark'" class="group">
+    <div
+      v-if="site.appearance && site.appearance !== 'force-dark'"
+      class="group"
+    >
       <div class="item appearance">
         <p class="label">
-          {{ theme.darkModeSwitchLabel || 'Appearance' }}
+          {{ theme.darkModeSwitchLabel || "Appearance" }}
         </p>
         <div class="appearance-action">
           <VPSwitchAppearance />

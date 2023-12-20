@@ -1,14 +1,14 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
-import { useData } from '../composables/data'
-import { isActive } from '../../shared'
-import VPLink from './VPLink.vue'
+import type { DefaultTheme } from "vitepress/theme";
+import { useData } from "../composables/data";
+import { isActive } from "../../shared";
+import VPLink from "./VPLink.vue";
 
 defineProps<{
-  item: DefaultTheme.NavItemWithLink
-}>()
+  item: DefaultTheme.NavItemWithLink;
+}>();
 
-const { page } = useData()
+const { page } = useData();
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const { page } = useData()
         page.relativePath,
         item.activeMatch || item.link,
         !!item.activeMatch
-      )
+      ),
     }"
     :href="item.link"
     :target="item.target"

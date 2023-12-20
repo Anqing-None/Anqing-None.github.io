@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-import VPIconChevronDown from './icons/VPIconChevronDown.vue'
-import VPIconLanguages from './icons/VPIconLanguages.vue'
-import { useLangs } from '../composables/langs'
-import VPLink from './VPLink.vue'
+import { ref } from "vue";
+import VPIconChevronDown from "./icons/VPIconChevronDown.vue";
+import VPIconLanguages from "./icons/VPIconLanguages.vue";
+import { useLangs } from "../composables/langs";
+import VPLink from "./VPLink.vue";
 
-const { localeLinks, currentLang } = useLangs({ correspondingLink: true })
-const isOpen = ref(false)
+const { localeLinks, currentLang } = useLangs({ correspondingLink: true });
+const isOpen = ref(false);
 
 function toggle() {
-  isOpen.value = !isOpen.value
+  isOpen.value = !isOpen.value;
 }
 </script>
 

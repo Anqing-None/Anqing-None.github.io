@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import VPIconHeart from './icons/VPIconHeart.vue'
-import VPButton from './VPButton.vue'
-import VPSponsors from './VPSponsors.vue'
+import VPIconHeart from "./icons/VPIconHeart.vue";
+import VPButton from "./VPButton.vue";
+import VPSponsors from "./VPSponsors.vue";
 
 export interface Sponsors {
-  tier: string
-  size?: 'medium' | 'big'
-  items: Sponsor[]
+  tier: string;
+  size?: "medium" | "big";
+  items: Sponsor[];
 }
 
 export interface Sponsor {
-  name: string
-  img: string
-  url: string
+  name: string;
+  img: string;
+  url: string;
 }
 interface Props {
-  message?: string
-  actionText?: string
-  actionLink?: string
-  data: Sponsors[]
+  message?: string;
+  actionText?: string;
+  actionLink?: string;
+  data: Sponsors[];
 }
 
 withDefaults(defineProps<Props>(), {
-  actionText: 'Become a sponsor'
-})
+  actionText: "Become a sponsor",
+});
 </script>
 
 <template>

@@ -50,7 +50,7 @@
   z-index: 1;
   height: 2px;
   border-radius: 2px;
-  content: '';
+  content: "";
   background-color: transparent;
   transition: background-color 0.25s;
 }
@@ -67,7 +67,7 @@
   background-color: var(--vp-code-tab-active-bar-color);
 }
 
-.vp-code-group div[class*='language-'],
+.vp-code-group div[class*="language-"],
 .vp-block {
   display: none;
   margin-top: 0 !important;
@@ -75,7 +75,7 @@
   border-top-right-radius: 0 !important;
 }
 
-.vp-code-group div[class*='language-'].active,
+.vp-code-group div[class*="language-"].active,
 .vp-block.active {
   display: block;
 }

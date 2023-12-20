@@ -1,51 +1,51 @@
 <script lang="ts" setup>
-import { useWindowScroll } from '@vueuse/core'
-import { onContentUpdated } from 'vitepress'
-import { computed, onMounted, ref, shallowRef } from 'vue'
-import { useData } from '../composables/data'
-import { getHeaders, type MenuItem } from '../composables/outline'
-import { useSidebar } from '../composables/sidebar'
-import VPLocalNavOutlineDropdown from './VPLocalNavOutlineDropdown.vue'
-import VPIconAlignLeft from './icons/VPIconAlignLeft.vue'
+import { useWindowScroll } from "@vueuse/core";
+import { onContentUpdated } from "vitepress";
+import { computed, onMounted, ref, shallowRef } from "vue";
+import { useData } from "../composables/data";
+import { getHeaders, type MenuItem } from "../composables/outline";
+import { useSidebar } from "../composables/sidebar";
+import VPLocalNavOutlineDropdown from "./VPLocalNavOutlineDropdown.vue";
+import VPIconAlignLeft from "./icons/VPIconAlignLeft.vue";
 
 defineProps<{
-  open: boolean
-}>()
+  open: boolean;
+}>();
 
 defineEmits<{
-  (e: 'open-menu'): void
-}>()
+  (e: "open-menu"): void;
+}>();
 
-const { theme, frontmatter } = useData()
-const { hasSidebar } = useSidebar()
-const { y } = useWindowScroll()
+const { theme, frontmatter } = useData();
+const { hasSidebar } = useSidebar();
+const { y } = useWindowScroll();
 
-const headers = shallowRef<MenuItem[]>([])
-const navHeight = ref(0)
+const headers = shallowRef<MenuItem[]>([]);
+const navHeight = ref(0);
 
 onMounted(() => {
   navHeight.value = parseInt(
     getComputedStyle(document.documentElement).getPropertyValue(
-      '--vp-nav-height'
+      "--vp-nav-height"
     )
-  )
-})
+  );
+});
 
 onContentUpdated(() => {
-  headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline)
-})
+  headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
+});
 
 const empty = computed(() => {
-  return headers.value.length === 0 && !hasSidebar.value
-})
+  return headers.value.length === 0 && !hasSidebar.value;
+});
 
 const classes = computed(() => {
   return {
     VPLocalNav: true,
     fixed: empty.value,
-    'reached-top': y.value >= navHeight.value
-  }
-})
+    "reached-top": y.value >= navHeight.value,
+  };
+});
 </script>
 
 <template>
@@ -62,7 +62,7 @@ const classes = computed(() => {
     >
       <VPIconAlignLeft class="menu-icon" />
       <span class="menu-text">
-        {{ theme.sidebarMenuLabel || 'Menu' }}
+        {{ theme.sidebarMenuLabel || "Menu" }}
       </span>
     </button>
 

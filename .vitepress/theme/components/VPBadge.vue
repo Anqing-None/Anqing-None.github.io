@@ -1,11 +1,11 @@
 <script setup lang="ts">
 interface Props {
-  text?: string
-  type?: 'info' | 'tip' | 'warning' | 'danger'
+  text?: string;
+  type?: "info" | "tip" | "warning" | "danger";
 }
 withDefaults(defineProps<Props>(), {
-  type: 'tip'
-})
+  type: "tip",
+});
 </script>
 
 <template>

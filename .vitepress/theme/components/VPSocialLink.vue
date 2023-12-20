@@ -1,18 +1,18 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
-import { computed } from 'vue'
-import { icons } from '../support/socialIcons'
+import type { DefaultTheme } from "vitepress/theme";
+import { computed } from "vue";
+import { icons } from "../support/socialIcons";
 
 const props = defineProps<{
-  icon: DefaultTheme.SocialLinkIcon
-  link: string
-  ariaLabel?: string
-}>()
+  icon: DefaultTheme.SocialLinkIcon;
+  link: string;
+  ariaLabel?: string;
+}>();
 
 const svg = computed(() => {
-  if (typeof props.icon === 'object') return props.icon.svg
-  return icons[props.icon]
-})
+  if (typeof props.icon === "object") return props.icon.svg;
+  return icons[props.icon];
+});
 </script>
 
 <template>

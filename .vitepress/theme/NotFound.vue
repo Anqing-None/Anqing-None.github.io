@@ -1,29 +1,29 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { withBase } from 'vitepress'
-import { useData } from './composables/data'
-import { useLangs } from './composables/langs'
+import { onMounted, ref } from "vue";
+import { withBase } from "vitepress";
+import { useData } from "./composables/data";
+import { useLangs } from "./composables/langs";
 
-const { site, theme } = useData()
-const { localeLinks } = useLangs({ removeCurrent: false })
+const { site, theme } = useData();
+const { localeLinks } = useLangs({ removeCurrent: false });
 
-const root = ref('/')
+const root = ref("/");
 onMounted(() => {
   const path = window.location.pathname
-    .replace(site.value.base, '')
-    .replace(/(^.*?\/).*$/, '/$1')
+    .replace(site.value.base, "")
+    .replace(/(^.*?\/).*$/, "/$1");
   if (localeLinks.value.length) {
     root.value =
       localeLinks.value.find(({ link }) => link.startsWith(path))?.link ||
-      localeLinks.value[0].link
+      localeLinks.value[0].link;
   }
-})
+});
 </script>
 
 <template>
   <div class="NotFound">
-    <p class="code">{{ theme.notFound?.code ?? '404' }}</p>
-    <h1 class="title">{{ theme.notFound?.title ?? 'PAGE NOT FOUND' }}</h1>
+    <p class="code">{{ theme.notFound?.code ?? "404" }}</p>
+    <h1 class="title">{{ theme.notFound?.title ?? "PAGE NOT FOUND" }}</h1>
     <div class="divider" />
     <blockquote class="quote">
       {{
@@ -38,7 +38,7 @@ onMounted(() => {
         :href="withBase(root)"
         :aria-label="theme.notFound?.linkLabel ?? 'go to home'"
       >
-        {{ theme.notFound?.linkText ?? 'Take me home' }}
+        {{ theme.notFound?.linkText ?? "Take me home" }}
       </a>
     </div>
   </div>
@@ -97,9 +97,7 @@ onMounted(() => {
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-brand-1);
-  transition:
-    border-color 0.25s,
-    color 0.25s;
+  transition: border-color 0.25s, color 0.25s;
 }
 
 .link:hover {

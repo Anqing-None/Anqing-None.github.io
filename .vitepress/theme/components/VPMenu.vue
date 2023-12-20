@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import VPMenuLink from './VPMenuLink.vue'
-import VPMenuGroup from './VPMenuGroup.vue'
+import VPMenuLink from "./VPMenuLink.vue";
+import VPMenuGroup from "./VPMenuGroup.vue";
 
 defineProps<{
-  items?: any[]
-}>()
+  items?: any[];
+}>();
 </script>
 
 <template>
@@ -63,7 +63,7 @@ defineProps<{
   font-size: 12px;
   font-weight: 500;
   color: var(--vp-c-text-2);
-  transition: color .5s;
+  transition: color 0.5s;
 }
 
 .VPMenu :deep(.action) {

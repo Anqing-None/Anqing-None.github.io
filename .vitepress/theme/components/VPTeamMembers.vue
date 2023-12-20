@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
-import { computed } from 'vue'
-import VPTeamMembersItem from './VPTeamMembersItem.vue'
+import type { DefaultTheme } from "vitepress/theme";
+import { computed } from "vue";
+import VPTeamMembersItem from "./VPTeamMembersItem.vue";
 
 interface Props {
-  size?: 'small' | 'medium'
-  members: DefaultTheme.TeamMember[]
+  size?: "small" | "medium";
+  members: DefaultTheme.TeamMember[];
 }
 
 const props = withDefaults(defineProps<Props>(), {
-  size: 'medium'
-})
+  size: "medium",
+});
 
-const classes = computed(() => [props.size, `count-${props.members.length}`])
+const classes = computed(() => [props.size, `count-${props.members.length}`]);
 </script>
 
 <template>

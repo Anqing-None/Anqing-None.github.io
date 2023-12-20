@@ -1,45 +1,45 @@
 <script setup lang="ts">
-import { onContentUpdated } from 'vitepress'
-import { nextTick, ref } from 'vue'
-import { useData } from '../composables/data'
-import { resolveTitle, type MenuItem } from '../composables/outline'
-import VPDocOutlineItem from './VPDocOutlineItem.vue'
-import VPIconChevronRight from './icons/VPIconChevronRight.vue'
+import { onContentUpdated } from "vitepress";
+import { nextTick, ref } from "vue";
+import { useData } from "../composables/data";
+import { resolveTitle, type MenuItem } from "../composables/outline";
+import VPDocOutlineItem from "./VPDocOutlineItem.vue";
+import VPIconChevronRight from "./icons/VPIconChevronRight.vue";
 
 const props = defineProps<{
-  headers: MenuItem[]
-  navHeight: number
-}>()
+  headers: MenuItem[];
+  navHeight: number;
+}>();
 
-const { theme } = useData()
-const open = ref(false)
-const vh = ref(0)
-const items = ref<HTMLDivElement>()
+const { theme } = useData();
+const open = ref(false);
+const vh = ref(0);
+const items = ref<HTMLDivElement>();
 
 onContentUpdated(() => {
-  open.value = false
-})
+  open.value = false;
+});
 
 function toggle() {
-  open.value = !open.value
-  vh.value = window.innerHeight + Math.min(window.scrollY - props.navHeight, 0)
+  open.value = !open.value;
+  vh.value = window.innerHeight + Math.min(window.scrollY - props.navHeight, 0);
 }
 
 function onItemClick(e: Event) {
-  if ((e.target as HTMLElement).classList.contains('outline-link')) {
+  if ((e.target as HTMLElement).classList.contains("outline-link")) {
     // disable animation on hash navigation when page jumps
     if (items.value) {
-      items.value.style.transition = 'none'
+      items.value.style.transition = "none";
     }
     nextTick(() => {
-      open.value = false
-    })
+      open.value = false;
+    });
   }
 }
 
 function scrollToTop() {
-  open.value = false
-  window.scrollTo({ top: 0, left: 0, behavior: 'smooth' })
+  open.value = false;
+  window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
 }
 </script>
 
@@ -50,17 +50,13 @@ function scrollToTop() {
       <VPIconChevronRight class="icon" />
     </button>
     <button @click="scrollToTop" v-else>
-      {{ theme.returnToTopLabel || 'Return to top' }}
+      {{ theme.returnToTopLabel || "Return to top" }}
     </button>
     <Transition name="flyout">
-      <div v-if="open"
-        ref="items"
-        class="items"
-        @click="onItemClick"
-      >
+      <div v-if="open" ref="items" class="items" @click="onItemClick">
         <div class="header">
           <a class="top-link" href="#" @click="scrollToTop">
-            {{ theme.returnToTopLabel || 'Return to top' }}
+            {{ theme.returnToTopLabel || "Return to top" }}
           </a>
         </div>
         <div class="outline">
@@ -147,11 +143,11 @@ function scrollToTop() {
 }
 
 .flyout-enter-active {
-  transition: all .2s ease-out;
+  transition: all 0.2s ease-out;
 }
 
 .flyout-leave-active {
-  transition: all .15s ease-in;
+  transition: all 0.15s ease-in;
 }
 
 .flyout-enter-from,

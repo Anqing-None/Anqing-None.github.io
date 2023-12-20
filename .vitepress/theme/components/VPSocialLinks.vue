@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import type { DefaultTheme } from 'vitepress/theme'
-import VPSocialLink from './VPSocialLink.vue'
+import type { DefaultTheme } from "vitepress/theme";
+import VPSocialLink from "./VPSocialLink.vue";
 
 defineProps<{
-  links: DefaultTheme.SocialLink[]
-}>()
+  links: DefaultTheme.SocialLink[];
+}>();
 </script>
 
 <template>

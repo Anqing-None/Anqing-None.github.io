@@ -1,13 +1,13 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
-import { withBase } from 'vitepress'
+import type { DefaultTheme } from "vitepress/theme";
+import { withBase } from "vitepress";
 
 defineProps<{
-  image: DefaultTheme.ThemeableImage
-  alt?: string
-}>()
+  image: DefaultTheme.ThemeableImage;
+  alt?: string;
+}>();
 
-defineOptions({ inheritAttrs: false })
+defineOptions({ inheritAttrs: false });
 </script>
 
 <template>

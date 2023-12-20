@@ -1,24 +1,24 @@
 <script lang="ts" setup>
-import { ref } from 'vue'
-import { useFlyout } from '../composables/flyout'
-import VPIconChevronDown from './icons/VPIconChevronDown.vue'
-import VPIconMoreHorizontal from './icons/VPIconMoreHorizontal.vue'
-import VPMenu from './VPMenu.vue'
+import { ref } from "vue";
+import { useFlyout } from "../composables/flyout";
+import VPIconChevronDown from "./icons/VPIconChevronDown.vue";
+import VPIconMoreHorizontal from "./icons/VPIconMoreHorizontal.vue";
+import VPMenu from "./VPMenu.vue";
 
 defineProps<{
-  icon?: any
-  button?: string
-  label?: string
-  items?: any[]
-}>()
+  icon?: any;
+  button?: string;
+  label?: string;
+  items?: any[];
+}>();
 
-const open = ref(false)
-const el = ref<HTMLElement>()
+const open = ref(false);
+const el = ref<HTMLElement>();
 
-useFlyout({ el, onBlur })
+useFlyout({ el, onBlur });
 
 function onBlur() {
-  open.value = false
+  open.value = false;
 }
 </script>
 

@@ -1,18 +1,18 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
-import VPImage from './VPImage.vue'
-import VPLink from './VPLink.vue'
-import VPIconArrowRight from './icons/VPIconArrowRight.vue'
+import type { DefaultTheme } from "vitepress/theme";
+import VPImage from "./VPImage.vue";
+import VPLink from "./VPLink.vue";
+import VPIconArrowRight from "./icons/VPIconArrowRight.vue";
 
 defineProps<{
-  icon?: DefaultTheme.FeatureIcon
-  title: string
-  details?: string
-  link?: string
-  linkText?: string
-  rel?: string
-  target?: string
-}>()
+  icon?: DefaultTheme.FeatureIcon;
+  title: string;
+  details?: string;
+  link?: string;
+  linkText?: string;
+  rel?: string;
+  target?: string;
+}>();
 </script>
 
 <template>

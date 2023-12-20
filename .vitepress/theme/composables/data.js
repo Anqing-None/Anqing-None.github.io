@@ -1,2 +1,2 @@
-import { useData as useData$ } from 'vitepress';
+import { useData as useData$ } from "vitepress";
 export const useData = useData$;

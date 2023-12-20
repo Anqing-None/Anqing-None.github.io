@@ -1,24 +1,24 @@
 <script setup lang="ts">
-import type { GridSize } from '../composables/sponsor-grid'
-import { ref } from 'vue'
-import { useSponsorsGrid } from '../composables/sponsor-grid'
+import type { GridSize } from "../composables/sponsor-grid";
+import { ref } from "vue";
+import { useSponsorsGrid } from "../composables/sponsor-grid";
 
 export interface Sponsor {
-  name: string
-  img: string
-  url: string
+  name: string;
+  img: string;
+  url: string;
 }
 interface Props {
-  size?: GridSize
-  data: Sponsor[]
+  size?: GridSize;
+  data: Sponsor[];
 }
 const props = withDefaults(defineProps<Props>(), {
-  size: 'medium'
-})
+  size: "medium",
+});
 
-const el = ref(null)
+const el = ref(null);
 
-useSponsorsGrid({ el, size: props.size })
+useSponsorsGrid({ el, size: props.size });
 </script>
 
 <template>

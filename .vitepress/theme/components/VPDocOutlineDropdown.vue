@@ -1,25 +1,27 @@
 <script setup lang="ts">
-import { ref, shallowRef } from 'vue'
-import { useData } from '../composables/data'
-import { getHeaders, resolveTitle, type MenuItem } from '../composables/outline'
-import VPDocOutlineItem from './VPDocOutlineItem.vue'
-import { onContentUpdated } from 'vitepress'
-import VPIconChevronRight from './icons/VPIconChevronRight.vue'
+import { ref, shallowRef } from "vue";
+import { useData } from "../composables/data";
+import {
+  getHeaders,
+  resolveTitle,
+  type MenuItem,
+} from "../composables/outline";
+import VPDocOutlineItem from "./VPDocOutlineItem.vue";
+import { onContentUpdated } from "vitepress";
+import VPIconChevronRight from "./icons/VPIconChevronRight.vue";
 
-const { frontmatter, theme } = useData()
-const open = ref(false)
-
-onContentUpdated(() => {
-  open.value = false
-})
-
-const headers = shallowRef<MenuItem[]>([])
+const { frontmatter, theme } = useData();
+const open = ref(false);
 
 onContentUpdated(() => {
-  headers.value = getHeaders(
-    frontmatter.value.outline ?? theme.value.outline
-  )
-})
+  open.value = false;
+});
+
+const headers = shallowRef<MenuItem[]>([]);
+
+onContentUpdated(() => {
+  headers.value = getHeaders(frontmatter.value.outline ?? theme.value.outline);
+});
 </script>
 
 <template>

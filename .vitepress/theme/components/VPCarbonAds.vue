@@ -1,37 +1,40 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
-import { ref, watch, onMounted } from 'vue'
-import { useAside } from '../composables/aside'
-import { useData } from '../composables/data'
+import type { DefaultTheme } from "vitepress/theme";
+import { ref, watch, onMounted } from "vue";
+import { useAside } from "../composables/aside";
+import { useData } from "../composables/data";
 
-const { page } = useData()
+const { page } = useData();
 const props = defineProps<{
-  carbonAds: DefaultTheme.CarbonAdsOptions
-}>()
+  carbonAds: DefaultTheme.CarbonAdsOptions;
+}>();
 
-const carbonOptions = props.carbonAds
+const carbonOptions = props.carbonAds;
 
-const { isAsideEnabled } = useAside()
-const container = ref()
+const { isAsideEnabled } = useAside();
+const container = ref();
 
-let isInitialized = false
+let isInitialized = false;
 
 function init() {
   if (!isInitialized) {
-    isInitialized = true
-    const s = document.createElement('script')
-    s.id = '_carbonads_js'
-    s.src = `//cdn.carbonads.com/carbon.js?serve=${carbonOptions.code}&placement=${carbonOptions.placement}`
-    s.async = true
-    container.value.appendChild(s)
+    isInitialized = true;
+    const s = document.createElement("script");
+    s.id = "_carbonads_js";
+    s.src = `//cdn.carbonads.com/carbon.js?serve=${carbonOptions.code}&placement=${carbonOptions.placement}`;
+    s.async = true;
+    container.value.appendChild(s);
   }
 }
 
-watch(() => page.value.relativePath, () => {
-  if (isInitialized && isAsideEnabled.value) {
-    ;(window as any)._carbonads?.refresh()
+watch(
+  () => page.value.relativePath,
+  () => {
+    if (isInitialized && isAsideEnabled.value) {
+      (window as any)._carbonads?.refresh();
+    }
   }
-})
+);
 
 // no need to account for option changes during dev, we can just
 // refresh the page
@@ -41,11 +44,11 @@ if (carbonOptions) {
     // otherwise, only load it if the page resizes to wide enough. this avoids
     // loading carbon at all on mobile where it's never shown
     if (isAsideEnabled.value) {
-      init()
+      init();
     } else {
-      watch(isAsideEnabled, (wide) => wide && init())
+      watch(isAsideEnabled, (wide) => wide && init());
     }
-  })
+  });
 }
 </script>
 

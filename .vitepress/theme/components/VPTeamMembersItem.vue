@@ -1,17 +1,17 @@
 <script setup lang="ts">
-import type { DefaultTheme } from 'vitepress/theme'
-import VPIconHeart from './icons/VPIconHeart.vue'
-import VPLink from './VPLink.vue'
-import VPSocialLinks from './VPSocialLinks.vue'
+import type { DefaultTheme } from "vitepress/theme";
+import VPIconHeart from "./icons/VPIconHeart.vue";
+import VPLink from "./VPLink.vue";
+import VPSocialLinks from "./VPSocialLinks.vue";
 
 interface Props {
-  size?: 'small' | 'medium'
-  member: DefaultTheme.TeamMember
+  size?: "small" | "medium";
+  member: DefaultTheme.TeamMember;
 }
 
 withDefaults(defineProps<Props>(), {
-  size: 'medium'
-})
+  size: "medium",
+});
 </script>
 
 <template>
