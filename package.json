@@ -15,5 +15,9 @@
   "license": "ISC",
   "devDependencies": {
     "vitepress": "^1.0.0-rc.32"
+  },
+  "dependencies": {
+    "dayjs": "^1.11.10",
+    "lodash-es": "^4.17.21"
   }
 }

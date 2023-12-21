@@ -11,6 +11,7 @@ export interface Feature {
   linkText?: string;
   rel?: string;
   target?: string;
+  date?: string;
 }
 
 const props = defineProps<{
@@ -42,7 +43,6 @@ const grid = computed(() => {
           v-for="feature in features"
           :key="feature.title"
           class="item"
-          :class="[grid]"
         >
           <VPFeature
             :icon="feature.icon"
@@ -52,6 +52,7 @@ const grid = computed(() => {
             :link-text="feature.linkText"
             :rel="feature.rel"
             :target="feature.target"
+            :date="feature.date"
           />
         </div>
       </div>

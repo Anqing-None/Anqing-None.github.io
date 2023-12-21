@@ -12,6 +12,7 @@ defineProps<{
   linkText?: string;
   rel?: string;
   target?: string;
+  date?: string;
 }>();
 </script>
 
@@ -46,7 +47,12 @@ defineProps<{
 
       <div v-if="linkText" class="link-text">
         <p class="link-text-value">
-          {{ linkText }} <VPIconArrowRight class="link-text-icon" />
+          <div>
+            {{ linkText }} <VPIconArrowRight class="link-text-icon" />
+          </div>
+          <div v-if="date">
+            {{ date }}
+          </div>
         </p>
       </div>
     </article>
@@ -113,6 +119,7 @@ defineProps<{
 .link-text-value {
   display: flex;
   align-items: center;
+  justify-content: space-between;
   font-size: 14px;
   font-weight: 500;
   color: var(--vp-c-brand-1);

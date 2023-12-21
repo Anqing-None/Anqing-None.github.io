@@ -7,7 +7,9 @@ import "./styles/components/vp-code-group.css";
 import "./styles/components/vp-doc.css";
 import "./styles/components/vp-sponsor.css";
 import VPBadge from "./components/VPBadge.vue";
+import VPFeatures from "./components/VPFeatures.vue";
 import Layout from "./Layout.vue";
+
 // Note: if we add more optional components here, i.e. components that are not
 // used in the theme by default unless the user imports them, make sure to update
 // the `lazyDefaultThemeComponentsRE` regex in src/node/build/bundle.ts.
@@ -27,6 +29,7 @@ const theme = {
   Layout,
   enhanceApp: ({ app }) => {
     app.component("Badge", VPBadge);
+    app.component("VPFeatures", VPFeatures);
   },
 };
 export default theme;
