@@ -9,9 +9,18 @@ export default defineConfig({
     // https://vitepress.dev/reference/default-theme-config
     nav: [
       { text: "主页", link: "/" },
-      { text: "文章", link: "/posts/index" },
-      { text: "镜像文档", link: "/posts/index" },
-      { text: "Demos", link: "/demos/index" },
+      { text: "文章", link: "/posts/index", activeMatch: "/posts/" },
+      {
+        text: "镜像文档",
+        items: [
+          {
+            text: "leaflet",
+            link: "http://www.xieanqing.top/leaflet",
+            target: "blank",
+          },
+        ],
+      },
+      { text: "Demos", link: "/demos/index", activeMatch: "/demos/" },
     ],
     socialLinks: [{ icon: "github", link: "https://github.com/Anqing-None" }],
   },
